@@ -700,12 +700,12 @@ const easterEgg = document.getElementById('easter-egg');
 easterEgg.style.cursor = 'pointer';
 
 function createConfetti() {
-    const flamingos = ['\u{1F9A9}'];
+    const items = ['🦩', '🥥', '🛟', '🌴', '📚'];
     const sizes = ['1.2rem', '1.6rem', '2rem', '2.4rem', '2.8rem'];
     for (let i = 0; i < 40; i++) {
         const f = document.createElement('div');
         f.className = 'confetti';
-        f.textContent = flamingos[0];
+        f.textContent = items[Math.floor(Math.random() * items.length)];
         f.style.left = Math.random() * 100 + 'vw';
         f.style.fontSize = sizes[Math.floor(Math.random() * sizes.length)];
         f.style.animationDuration = (Math.random() * 2.5 + 2) + 's';
