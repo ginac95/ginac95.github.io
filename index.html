@@ -4,14 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuanyuan (Gina) Cui, Ph.D. — Academic Profile</title>
+    <meta name="description" content="Yuanyuan (Gina) Cui, Ph.D. — Assistant Professor of Marketing at Coastal Carolina University. Research in consumer psychology, AI, and behavioral decision-making.">
+    <meta property="og:title" content="Yuanyuan (Gina) Cui, Ph.D. — Academic Profile">
+    <meta property="og:description" content="Assistant Professor of Marketing at Coastal Carolina University. Research in consumer psychology, AI, and behavioral decision-making.">
+    <meta property="og:image" content="https://ginac95.github.io/headshot.png">
+    <meta property="og:url" content="https://ginac95.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yuanyuan (Gina) Cui, Ph.D.">
+    <meta name="twitter:description" content="Assistant Professor of Marketing. Research in consumer psychology, AI, and behavioral decision-making.">
+    <meta name="twitter:image" content="https://ginac95.github.io/headshot.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yuanyuan (Gina) Cui",
+        "givenName": "Yuanyuan",
+        "additionalName": "Gina",
+        "familyName": "Cui",
+        "honorificSuffix": "Ph.D.",
+        "jobTitle": "Assistant Professor of Marketing",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Coastal Carolina University",
+            "department": "E. Craig Wall Sr. College of Business Administration"
+        },
+        "url": "https://ginac95.github.io/",
+        "image": "https://ginac95.github.io/headshot.png",
+        "email": "ycui1@coastal.edu",
+        "sameAs": [
+            "https://scholar.google.com/citations?hl=en&user=P8fhrcwAAAAJ",
+            "https://www.linkedin.com/in/yuanyuan-gina-cui-b46629188",
+            "https://orcid.org/0000-0001-5148-332X",
+            "https://x.com/Gina_Cui"
+        ],
+        "knowsAbout": ["Consumer Psychology", "Marketing", "Artificial Intelligence", "Behavioral Decision-Making", "Digital Marketing"],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Auckland University of Technology"
+        }
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        // Apply dark mode before page renders to prevent flash
+        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 </head>
 <body>
 
+<!-- Skip to content for keyboard users -->
+<a href="#hero" class="skip-link">Skip to main content</a>
+
 <!-- Navigation -->
-<nav>
+<nav role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
         <a href="#" class="nav-name">Gina Cui</a>
         <div class="nav-links">
@@ -23,12 +73,16 @@
             <a href="#service">Service</a>
             <a href="#contact">Contact</a>
         </div>
-        <a href="mailto:ycui1@coastal.edu" class="nav-email" title="Email me"><i class="fa-solid fa-envelope"></i></a>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <a href="mailto:ycui1@coastal.edu" class="nav-email" title="Email me" aria-label="Send email"><i class="fa-solid fa-envelope"></i></a>
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+        </div>
         <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
     </div>
 </nav>
 
 <!-- Hero -->
+<main>
 <header id="hero">
     <div class="container hero-content">
         <div class="hero-photo">
@@ -51,10 +105,11 @@
                 <a href="#publications" class="btn btn-outline">View Publications</a>
             </div>
             <div class="social-links">
-                <a href="https://scholar.google.com/citations?hl=en&user=P8fhrcwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
-                <a href="https://www.linkedin.com/in/yuanyuan-gina-cui-b46629188" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.coastal.edu/academics/facultyprofiles/business/marketingandhospitalityresortandtourismmanagement/ginacui/" target="_blank" title="Faculty Profile"><i class="fa-solid fa-building-columns"></i></a>
-                <a href="https://x.com/Gina_Cui" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?hl=en&user=P8fhrcwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar" aria-label="Google Scholar profile"><i class="fa-brands fa-google-scholar"></i></a>
+                <a href="https://www.linkedin.com/in/yuanyuan-gina-cui-b46629188" target="_blank" title="LinkedIn" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.coastal.edu/academics/facultyprofiles/business/marketingandhospitalityresortandtourismmanagement/ginacui/" target="_blank" title="Faculty Profile" aria-label="University faculty profile"><i class="fa-solid fa-building-columns"></i></a>
+                <a href="https://x.com/Gina_Cui" target="_blank" title="X / Twitter" aria-label="X (Twitter) profile"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://orcid.org/0000-0001-5148-332X" target="_blank" title="ORCID" aria-label="ORCID profile"><i class="fa-brands fa-orcid"></i></a>
             </div>
         </div>
     </div>
@@ -563,6 +618,8 @@
     </div>
 </section>
 
+</main>
+
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -573,6 +630,7 @@
     <div class="container">
         <p class="footer-verse">"Learn to do good; seek justice, correct oppression." <span class="verse-ref">&mdash; Isaiah 1:17</span></p>
         <p>&copy; 2026 Yuanyuan (Gina) Cui, Ph.D. All rights reserved.</p>
+        <p class="last-updated">Last updated: March 2026</p>
     </div>
 </footer>
 
@@ -766,6 +824,23 @@ async function fetchScholarStats() {
 
 // Fetch stats before counter animation triggers
 fetchScholarStats();
+
+// Dark mode toggle
+const darkToggle = document.getElementById('darkModeToggle');
+const darkIcon = darkToggle.querySelector('i');
+
+function updateDarkIcon() {
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+}
+updateDarkIcon();
+
+darkToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    updateDarkIcon();
+});
 </script>
 
 </body>
