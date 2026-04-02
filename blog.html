@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Highlights — Gina Cui, Ph.D.</title>
+    <meta name="description" content="Plain-language summaries of key research by Yuanyuan (Gina) Cui on consumer psychology, AI, and behavioral decision-making.">
+    <meta property="og:title" content="Research Highlights — Gina Cui, Ph.D.">
+    <meta property="og:description" content="Plain-language summaries of key research on consumer psychology, AI, and behavioral decision-making.">
+    <meta property="og:image" content="https://ginac95.github.io/headshot.png">
+    <meta property="og:url" content="https://ginac95.github.io/blog.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <style>
+        .blog-header {
+            padding: 100px 0 40px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--pink-soft) 30%, var(--pink-pale) 60%, var(--white) 100%);
+            background-size: 300% 300%;
+            animation: hero-gradient 12s ease infinite;
+        }
+
+        .blog-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .blog-header p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-top: 8px;
+            max-width: 600px;
+        }
+
+        .blog-grid {
+            padding: 60px 0 80px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px;
+            margin-bottom: 32px;
+            transition: all var(--transition);
+        }
+
+        .blog-card:hover {
+            border-color: var(--pink);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background: var(--pink-soft);
+            color: var(--pink);
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            margin-right: 6px;
+        }
+
+        .blog-card h2 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .blog-card h2::after {
+            display: none;
+        }
+
+        .blog-meta {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .blog-body {
+            font-size: 0.95rem;
+            line-height: 1.85;
+            color: var(--text);
+        }
+
+        .blog-body p {
+            margin-bottom: 12px;
+        }
+
+        .blog-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-takeaway {
+            background: var(--pink-soft);
+            border-left: 3px solid var(--pink);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .blog-takeaway strong {
+            color: var(--pink);
+        }
+
+        .blog-citation {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .blog-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        html.dark-mode .blog-card {
+            background: #16162a;
+        }
+
+        html.dark-mode .blog-takeaway {
+            background: #2a1a2e;
+        }
+
+        /* Nav for subpages */
+        .subnav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            max-width: 100%;
+        }
+
+        html.dark-mode .subnav {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        .subnav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .subnav-left a {
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .subnav-left a:hover {
+            color: var(--pink);
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="subnav" role="navigation" aria-label="Blog navigation">
+    <div class="subnav-left">
+        <a href="/">Gina Cui</a>
+        <span style="color:var(--text-light);font-size:0.9rem;">Research Highlights</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+        <a href="/" class="nav-email" title="Home" aria-label="Back to home"><i class="fa-solid fa-house"></i></a>
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+</nav>
+
+<header class="blog-header">
+    <div class="container">
+        <h1>Research Highlights</h1>
+        <p>Key findings from my work, explained in plain language. Because research should be accessible to everyone.</p>
+        <p style="font-size:0.82rem;color:var(--text-light);margin-top:12px;"><i class="fa-solid fa-robot"></i> Note: These summaries were AI-generated and may not capture every nuance of the original research. For full details, please refer to the cited publications.</p>
+    </div>
+</header>
+
+<main class="blog-grid">
+    <div class="container">
+
+        <!-- Highlight 1 -->
+        <article class="blog-card">
+            <span class="blog-tag">AI &amp; Consumer Behavior</span>
+            <h2>The End of Search as We Know It</h2>
+            <p class="blog-meta">Cui, Y. &amp; van Esch, P. (2025) &middot; Business Horizons</p>
+            <div class="blog-body">
+                <p>What happens when AI agents do your shopping for you? We explored how the rise of AI-powered search and shopping assistants is fundamentally changing the way consumers discover products and make purchasing decisions.</p>
+                <p>In what we call the "delegate economy," consumers increasingly hand off decisions to AI agents. But here's the catch: only brands that AI systems recognize and recommend will survive. If an AI shopping assistant doesn't know your brand exists, neither will the consumer.</p>
+                <div class="blog-takeaway">
+                    <strong>Key takeaway:</strong> Brands need to start optimizing not just for human consumers, but for the AI agents that increasingly mediate consumer choices. The rules of discovery are being rewritten.
+                </div>
+            </div>
+            <p class="blog-citation">Cui, Y. &amp; van Esch, P. (2025). The End of Search as We Know It: Only Those Chosen by AI Agents Will Survive in the Delegate Economy. <em>Business Horizons</em>.</p>
+        </article>
+
+        <!-- Highlight 2 -->
+        <article class="blog-card">
+            <span class="blog-tag">AI &amp; Financial Decisions</span>
+            <span class="blog-tag">Sole-Authored</span>
+            <h2>Would You Trust a Robot With Your Money?</h2>
+            <p class="blog-meta">Cui, Y. (2022) &middot; International Journal of Bank Marketing</p>
+            <div class="blog-body">
+                <p>We're increasingly getting financial advice from AI assistants. But does making an AI look and feel more human-like change the financial risks we're willing to take?</p>
+                <p>My research found that when AI financial advisors are anthropomorphized &mdash; given human-like names, voices, or appearances &mdash; consumers become more risk-averse. In other words, a more "human" AI makes you play it safer with your money. This challenges the assumption that humanizing AI always makes consumers more comfortable and trusting.</p>
+                <div class="blog-takeaway">
+                    <strong>Key takeaway:</strong> Making AI look more human doesn't always increase trust. In financial contexts, it can actually make people more cautious &mdash; which has important implications for how fintech companies design their AI interfaces.
+                </div>
+            </div>
+            <p class="blog-citation">Cui, Y. (2022). Sophia Sophia Tell Me More, Which is the Risk Free Option of All? AI Anthropomorphism and Risk Aversion in Financial Decision-Making. <em>International Journal of Bank Marketing</em>.</p>
+        </article>
+
+        <!-- Highlight 3 -->
+        <article class="blog-card">
+            <span class="blog-tag">Political Psychology</span>
+            <span class="blog-tag">A* Journal</span>
+            <h2>Your Politics Shape How You Feel About AI</h2>
+            <p class="blog-meta">van Esch, P., Cui, Y., Das, G., Jain, S. P., &amp; Wirtz, J. (2022) &middot; Annals of Tourism Research</p>
+            <div class="blog-body">
+                <p>Not everyone feels the same way about AI-powered services. We discovered that your political ideology &mdash; whether you lean liberal or conservative &mdash; significantly predicts how you respond to AI in service settings like tourism.</p>
+                <p>Conservatives, who tend to value tradition and personal control, showed more resistance to AI-driven services. Liberals, more open to novel experiences, were more receptive. This pattern held across multiple studies and contexts, from AI hotel concierges to automated travel planning.</p>
+                <div class="blog-takeaway">
+                    <strong>Key takeaway:</strong> One-size-fits-all AI deployment doesn't work. Companies should consider the political and cultural leanings of their customer base when deciding how prominently to feature AI in the customer experience.
+                </div>
+            </div>
+            <p class="blog-citation">van Esch, P., Cui, Y., Das, G., Jain, S. P., &amp; Wirtz, J. (2022). Tourists and AI: A Political Ideology Perspective. <em>Annals of Tourism Research</em>.</p>
+        </article>
+
+        <!-- Highlight 4 -->
+        <article class="blog-card">
+            <span class="blog-tag">Pro-Social Behavior</span>
+            <span class="blog-tag">A* Journal</span>
+            <h2>Why Giving to Distant Strangers Makes You Happier</h2>
+            <p class="blog-meta">Das, G., van Esch, P., Jain, S. P., &amp; Cui, Y. (2023) &middot; International Journal of Research in Marketing</p>
+            <div class="blog-body">
+                <p>Does it matter whether your donation helps someone in your neighborhood or someone across the world? We found that it does &mdash; but not in the way you might think.</p>
+                <p>Our research revealed that donors experience greater happiness when giving to socially distant beneficiaries (people far removed from their own social circle) compared to socially close ones. The key mechanism? Benevolence. Giving to distant strangers activates a stronger sense of selfless generosity, which amplifies the "warm glow" of giving.</p>
+                <div class="blog-takeaway">
+                    <strong>Key takeaway:</strong> Charities can boost donor satisfaction by emphasizing the social distance of beneficiaries. Framing donations as helping distant communities &mdash; rather than local ones &mdash; can paradoxically increase both the willingness to give and the happiness derived from it.
+                </div>
+            </div>
+            <p class="blog-citation">Das, G., van Esch, P., Jain, S. P., &amp; Cui, Y. (2023). Donor Happiness Comes from Afar: The Role of Donation Beneficiary Social Distance and Benevolence. <em>International Journal of Research in Marketing</em>.</p>
+        </article>
+
+        <a href="/" class="blog-back"><i class="fa-solid fa-arrow-left"></i> Back to main site</a>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Yuanyuan (Gina) Cui, Ph.D. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Dark mode toggle
+const darkToggle = document.getElementById('darkModeToggle');
+const darkIcon = darkToggle.querySelector('i');
+
+function updateDarkIcon() {
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+}
+updateDarkIcon();
+
+darkToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    updateDarkIcon();
+});
+</script>
+
+</body>
+</html>

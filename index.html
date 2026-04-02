@@ -80,6 +80,7 @@
             <a href="#media">Media</a>
             <a href="#service">Service</a>
             <a href="#contact">Contact</a>
+            <a href="blog.html">Blog</a>
         </div>
         <div style="display:flex;align-items:center;gap:12px;">
             <a href="mailto:ycui1@coastal.edu" class="nav-email" title="Email me" aria-label="Send email"><i class="fa-solid fa-envelope"></i></a>
@@ -809,6 +810,10 @@ async function fetchScholarStats() {
                 const citations = parseInt(citMatch[1]);
                 const hIndex = hMatch ? parseInt(hMatch[1]) : null;
 
+                // Count publications by matching table rows with class "gsc_a_tr"
+                const pubMatches = html.match(/class="gsc_a_tr"/g);
+                const pubCount = pubMatches ? pubMatches.length : null;
+
                 // Update the stat counters with live data
                 const statNumbers = document.querySelectorAll('.stat-number[data-target]');
                 statNumbers.forEach(el => {
@@ -816,11 +821,14 @@ async function fetchScholarStats() {
                     if (label === 'Citations' && citations) {
                         el.dataset.target = citations;
                         el.dataset.suffix = '+';
+                    } else if (label === 'Publications' && pubCount) {
+                        el.dataset.target = pubCount;
+                        el.dataset.suffix = '+';
                     } else if (label === 'h-index' && hIndex) {
                         el.dataset.target = hIndex;
                     }
                 });
-                console.log('Scholar stats updated:', { citations, hIndex });
+                console.log('Scholar stats updated:', { citations, hIndex, pubCount });
                 return;
             }
         } catch (e) {

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Gina Cui</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        // Apply dark mode before page renders to prevent flash
+        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <style>
+        /* 404-specific styles */
+        .page-404 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .flamingo-hero {
+            font-size: 6rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.2s ease;
+            user-select: none;
+            animation: flamingo-bob 2s ease-in-out infinite;
+        }
+
+        .flamingo-hero:hover {
+            transform: scale(1.2);
+        }
+
+        .flamingo-hero:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes flamingo-bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--pink);
+            line-height: 1;
+            margin-top: 16px;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 8px;
+        }
+
+        /* Override the h2::after underline for this page */
+        .error-title::after {
+            display: none;
+        }
+
+        .error-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-top: 12px;
+            max-width: 400px;
+        }
+
+        .error-home {
+            margin-top: 32px;
+        }
+
+        .click-hint {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 24px;
+            opacity: 0.6;
+        }
+
+        .dark-mode-toggle-404 {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            color: var(--text-light);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+        }
+
+        .dark-mode-toggle-404:hover {
+            color: var(--pink);
+            border-color: var(--pink);
+        }
+
+        html.dark-mode .dark-mode-toggle-404 {
+            border-color: #2a2a45;
+            color: #ffd93d;
+        }
+
+        html.dark-mode .dark-mode-toggle-404:hover {
+            border-color: #ffd93d;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle-404" id="darkToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <main class="page-404">
+        <div class="flamingo-hero" id="flamingo" title="Click me!">🦩</div>
+        <div class="error-code">404</div>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-subtitle">This flamingo wandered off the path... The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/" class="btn btn-primary error-home">
+            <i class="fa-solid fa-house"></i>&nbsp; Back to Home
+        </a>
+        <p class="click-hint">Psst... click the flamingo</p>
+    </main>
+
+    <script>
+        // Flamingo rain on click (reuses .confetti and flamingo-fall from style.css)
+        const flamingo = document.getElementById('flamingo');
+        flamingo.addEventListener('click', () => {
+            for (let i = 0; i < 20; i++) {
+                const el = document.createElement('div');
+                el.className = 'confetti';
+                el.textContent = '🦩';
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+                el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                el.style.animationDelay = (Math.random() * 0.8) + 's';
+                document.body.appendChild(el);
+                el.addEventListener('animationend', () => el.remove());
+            }
+        });
+
+        // Dark mode toggle
+        const toggle = document.getElementById('darkToggle');
+        const icon = toggle.querySelector('i');
+
+        function updateIcon() {
+            const isDark = document.documentElement.classList.contains('dark-mode');
+            icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+        updateIcon();
+
+        toggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            const isDark = document.documentElement.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+            updateIcon();
+        });
+    </script>
+</body>
+</html>
