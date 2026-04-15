@@ -449,6 +449,11 @@ h2::after {
     color: #2e7d32;
 }
 
+.badge-practitioner {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
 .badge-review {
     background: #fff3e0;
     color: #e65100;
@@ -1201,6 +1206,11 @@ html.dark-mode .badge-peer {
 html.dark-mode .badge-book {
     background: #1a2e1a;
     color: #4caf50;
+}
+
+html.dark-mode .badge-practitioner {
+    background: #1a2a3e;
+    color: #64b5f6;
 }
 
 html.dark-mode .badge-review {
