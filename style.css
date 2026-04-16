@@ -419,16 +419,57 @@ h2::after {
 
 /* === Publications === */
 .pub-category {
-    margin-bottom: 40px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
 }
 
-.pub-category h3 {
+.pub-category summary {
     font-size: 1.05rem;
+    font-weight: 700;
     color: var(--dark);
-    margin-bottom: 16px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
+    background: var(--gray-bg);
+    list-style: none;
+    transition: background var(--transition);
+}
+
+.pub-category summary::-webkit-details-marker {
+    display: none;
+}
+
+.pub-category summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.7rem;
+    margin-left: auto;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.pub-category[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.pub-category summary:hover {
+    background: var(--pink-soft);
+}
+
+.pub-category .pub-list,
+.pub-category .pipeline-list,
+.pub-category .pub-note {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pub-category .pub-note {
+    padding-top: 16px;
 }
 
 .badge {
@@ -592,70 +633,88 @@ h2::after {
 
 /* === Awards === */
 .awards-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     margin-top: 36px;
 }
 
 .award-item {
     display: flex;
-    gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
 }
 
-.award-item:last-child {
-    border-bottom: none;
+.award-item:hover {
+    border-color: var(--pink);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 
 .award-year {
-    min-width: 70px;
+    min-width: 60px;
     font-weight: 800;
     color: var(--pink);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
 }
 
 .award-item strong {
     color: var(--dark);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .award-item p {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-light);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 /* === Media === */
 .media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     margin-top: 36px;
 }
 
 .media-item {
     display: flex;
-    gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
 }
 
-.media-item:last-child {
-    border-bottom: none;
+.media-item:hover {
+    border-color: var(--pink);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 
 .media-year {
     min-width: 50px;
     font-weight: 800;
     color: var(--pink);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
 }
 
 .media-item strong {
     color: var(--dark);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .media-item p {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-light);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 /* === Talks === */
@@ -909,7 +968,7 @@ footer p {
 
 /* === World Map === */
 #map-section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .world-map {
@@ -1131,10 +1190,9 @@ footer p {
         gap: 4px;
     }
 
-    .award-item,
-    .media-item {
-        flex-direction: column;
-        gap: 4px;
+    .awards-list,
+    .media-grid {
+        grid-template-columns: 1fr;
     }
 
     section {
@@ -1194,8 +1252,22 @@ html.dark-mode .hero-img {
     border-color: var(--pink);
 }
 
-html.dark-mode .interest-card {
+html.dark-mode .interest-card,
+html.dark-mode .award-item,
+html.dark-mode .media-item {
     background: #0f1523;
+}
+
+html.dark-mode .pub-category {
+    border-color: #1f2937;
+}
+
+html.dark-mode .pub-category summary {
+    background: #0f1523;
+}
+
+html.dark-mode .pub-category summary:hover {
+    background: #1f1225;
 }
 
 html.dark-mode .featured-logo {
