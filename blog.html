@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Highlights — Gina Cui, Ph.D.</title>
-    <meta name="description" content="Plain-language summaries of key research by Yuanyuan (Gina) Cui on consumer psychology, AI, and behavioral decision-making.">
-    <meta property="og:title" content="Research Highlights — Gina Cui, Ph.D.">
-    <meta property="og:description" content="Plain-language summaries of key research on consumer psychology, AI, and behavioral decision-making.">
+    <title>Research & Commentary — Gina Cui, Ph.D.</title>
+    <meta name="description" content="Research highlights and commentary by Yuanyuan (Gina) Cui on consumer psychology, AI, marketing, and behavioral decision-making.">
+    <meta property="og:title" content="Research & Commentary — Gina Cui, Ph.D.">
+    <meta property="og:description" content="Research highlights and commentary on consumer psychology, AI, marketing, and behavioral decision-making.">
     <meta property="og:image" content="https://ginac95.github.io/headshot.png">
     <meta property="og:url" content="https://ginac95.github.io/blog.html">
     <meta property="og:type" content="website">
@@ -23,50 +23,92 @@
     </script>
     <style>
         .blog-header {
-            padding: 100px 0 40px;
-            background: linear-gradient(135deg, var(--white) 0%, var(--pink-soft) 30%, var(--pink-pale) 60%, var(--white) 100%);
+            padding: 120px 0 50px;
+            background: linear-gradient(160deg, var(--white) 0%, var(--pink-soft) 40%, var(--pink-pale) 70%, var(--white) 100%);
             background-size: 300% 300%;
-            animation: hero-gradient 12s ease infinite;
+            animation: hero-gradient 16s ease infinite;
         }
 
         .blog-header h1 {
             font-family: var(--font-display);
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--dark);
+        }
+
+        .blog-header h1::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--pink), var(--gold, #b08d57));
+            margin-top: 14px;
+            border-radius: 2px;
         }
 
         .blog-header p {
             color: var(--text-light);
             font-size: 1.05rem;
-            margin-top: 8px;
+            margin-top: 12px;
             max-width: 600px;
+        }
+
+        .blog-header .blog-subtitle {
+            font-family: var(--font-display);
+            font-style: italic;
+            color: var(--text);
+            font-size: 1.1rem;
+            opacity: 0.85;
         }
 
         .blog-grid {
             padding: 60px 0 80px;
         }
 
+        /* Blog cards */
         .blog-card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-left: 3px solid var(--pink);
+            border-radius: 2px 12px 12px 2px;
             padding: 36px;
             margin-bottom: 32px;
             transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: blog-card-in 0.5s ease forwards;
+        }
+
+        .blog-card:nth-child(1) { animation-delay: 0.05s; }
+        .blog-card:nth-child(2) { animation-delay: 0.1s; }
+        .blog-card:nth-child(3) { animation-delay: 0.15s; }
+        .blog-card:nth-child(4) { animation-delay: 0.2s; }
+        .blog-card:nth-child(5) { animation-delay: 0.25s; }
+        .blog-card:nth-child(6) { animation-delay: 0.3s; }
+
+        @keyframes blog-card-in {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .blog-card--commentary {
+            border-left-color: var(--gold, #b08d57);
         }
 
         .blog-card:hover {
             border-color: var(--pink);
             box-shadow: var(--shadow-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+        }
+
+        .blog-card--commentary:hover {
+            border-left-color: var(--gold, #b08d57);
         }
 
         .blog-tag {
             display: inline-block;
             background: var(--pink-soft);
             color: var(--pink);
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             padding: 3px 10px;
             border-radius: 50px;
             font-weight: 600;
@@ -76,8 +118,15 @@
             margin-right: 6px;
         }
 
+        .blog-tag--gold {
+            background: rgba(176, 141, 87, 0.12);
+            color: var(--gold, #b08d57);
+        }
+
         .blog-card h2 {
-            font-size: 1.3rem;
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--dark);
             margin-bottom: 8px;
         }
@@ -89,17 +138,17 @@
         .blog-meta {
             font-size: 0.82rem;
             color: var(--text-light);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .blog-body {
             font-size: 0.95rem;
-            line-height: 1.85;
+            line-height: 1.9;
             color: var(--text);
         }
 
         .blog-body p {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .blog-body p:last-child {
@@ -110,31 +159,49 @@
             background: var(--pink-soft);
             border-left: 3px solid var(--pink);
             border-radius: 0 8px 8px 0;
-            padding: 16px 20px;
-            margin-top: 16px;
+            padding: 18px 22px;
+            margin-top: 18px;
             font-size: 0.9rem;
             color: var(--text);
+        }
+
+        .blog-card--commentary .blog-takeaway {
+            background: rgba(176, 141, 87, 0.08);
+            border-left-color: var(--gold, #b08d57);
         }
 
         .blog-takeaway strong {
             color: var(--pink);
         }
 
+        .blog-card--commentary .blog-takeaway strong {
+            color: var(--gold, #b08d57);
+        }
+
         .blog-citation {
             font-size: 0.82rem;
             color: var(--text-light);
             font-style: italic;
-            margin-top: 16px;
-            padding-top: 16px;
+            margin-top: 18px;
+            padding-top: 18px;
             border-top: 1px solid var(--border);
         }
 
         .blog-back {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            margin-top: 40px;
+            gap: 8px;
+            margin-top: 48px;
             font-weight: 600;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            transition: all var(--transition);
+        }
+
+        .blog-back:hover {
+            background: var(--pink-soft);
+            border-color: var(--pink);
         }
 
         html.dark-mode .blog-card {
@@ -143,6 +210,14 @@
 
         html.dark-mode .blog-takeaway {
             background: #1f1225;
+        }
+
+        html.dark-mode .blog-card--commentary .blog-takeaway {
+            background: #1f1a12;
+        }
+
+        html.dark-mode .blog-tag--gold {
+            background: rgba(176, 141, 87, 0.15);
         }
 
         /* Nav for subpages */
@@ -185,8 +260,12 @@
         }
 
         @media (max-width: 768px) {
+            .blog-header {
+                padding: 100px 0 40px;
+            }
+
             .blog-header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .blog-card {
@@ -201,7 +280,7 @@
 <nav class="subnav" role="navigation" aria-label="Blog navigation">
     <div class="subnav-left">
         <a href="/">Gina Cui</a>
-        <span style="color:var(--text-light);font-size:0.9rem;">Research Highlights</span>
+        <span style="color:var(--text-light);font-size:0.9rem;">Research & Commentary</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
         <a href="/" class="nav-email" title="Home" aria-label="Back to home"><i class="fa-solid fa-house"></i></a>
@@ -211,8 +290,9 @@
 
 <header class="blog-header">
     <div class="container">
-        <h1>Research Highlights</h1>
-        <p>Key findings from my work, explained in plain language. Because research should be accessible to everyone.</p>
+        <h1>Research & Commentary</h1>
+        <p class="blog-subtitle">Ideas worth sharing, research worth explaining.</p>
+        <p>Key findings from my work explained in plain language, plus commentary on trends shaping consumer psychology and marketing.</p>
         <p style="font-size:0.82rem;color:var(--text-light);margin-top:12px;"><i class="fa-solid fa-robot"></i> Note: Some research summaries below were AI-generated and may not capture every nuance of the original research. For full details, please refer to the cited publications.</p>
     </div>
 </header>
@@ -221,9 +301,9 @@
     <div class="container">
 
         <!-- Commentary: AI Threatening Platforms / HBR -->
-        <article class="blog-card">
-            <span class="blog-tag">Commentary</span>
-            <span class="blog-tag">Harvard Business Review</span>
+        <article class="blog-card blog-card--commentary">
+            <span class="blog-tag blog-tag--gold">Commentary</span>
+            <span class="blog-tag blog-tag--gold">Harvard Business Review</span>
             <h2>How AI Agents Are Breaking the Platform Business Model</h2>
             <p class="blog-meta">Cui, Y., van Esch, P., &amp; Kietzmann, J. &middot; Harvard Business Review &middot; April 13, 2026</p>
             <div class="blog-body">
@@ -238,9 +318,9 @@
         </article>
 
         <!-- Commentary: $22 Smoothies / Compensatory Consumption -->
-        <article class="blog-card">
-            <span class="blog-tag">Commentary</span>
-            <span class="blog-tag">The Conversation</span>
+        <article class="blog-card blog-card--commentary">
+            <span class="blog-tag blog-tag--gold">Commentary</span>
+            <span class="blog-tag blog-tag--gold">The Conversation</span>
             <h2>The $22 Smoothie Paradox: Why Economic Anxiety Drives Premium Spending</h2>
             <p class="blog-meta">Cui, Y. &amp; van Esch, P. &middot; The Conversation &middot; April 8, 2026</p>
             <div class="blog-body">
