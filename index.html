@@ -55,6 +55,9 @@
     }
     </script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
@@ -102,7 +105,7 @@
             <p class="hero-verse">"I turned my heart to know and to search out and to seek wisdom and the scheme of things." <span class="verse-ref">&mdash; Ecclesiastes 7:25</span></p>
             <h1>Yuanyuan (Gina) Cui<span class="easter-egg-wrap"><span class="accent" id="easter-egg">.</span><span class="press-me">press me</span></span></h1>
             <p class="title">Ph.D. &middot; Assistant Professor of Marketing</p>
-            <p class="typewriter-line"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
+            <p class="hero-tagline">I study why people do what they do &mdash; especially when it defies logic.</p>
             <p class="affiliation">E. Craig Wall Sr. College of Business Administration<br>Coastal Carolina University</p>
             <div class="hero-stats">
                 <div class="stat"><span class="stat-number" data-target="1314" data-suffix="+">0</span><span class="stat-label">Citations</span></div>
@@ -130,11 +133,13 @@
     <div class="container">
         <p class="featured-label">Featured In</p>
         <div class="featured-logos">
-            <span class="featured-logo">NPR</span>
-            <span class="featured-logo">Le HuffPost</span>
-            <span class="featured-logo">The Conversation</span>
             <span class="featured-logo">Harvard Business Review</span>
-            <span class="featured-logo">WalletHub</span>
+            <span class="featured-logo">NPR</span>
+            <span class="featured-logo">Fortune</span>
+            <span class="featured-logo">The Conversation</span>
+            <span class="featured-logo">Le HuffPost</span>
+            <span class="featured-logo">SingularityHub</span>
+            <span class="featured-logo">Down To Earth</span>
         </div>
     </div>
 </section>
@@ -711,39 +716,6 @@ document.querySelectorAll('section').forEach(section => {
     section.classList.add('animate-ready');
     observer.observe(section);
 });
-
-// Typewriter effect
-const typewriterWords = ['Researcher.', 'Foodie.', 'Adventurer.', 'Forever curious.'];
-const typewriterEl = document.getElementById('typewriter');
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 100;
-
-function typewrite() {
-    const currentWord = typewriterWords[wordIndex];
-    if (isDeleting) {
-        typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-    } else {
-        typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 120;
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % typewriterWords.length;
-        typeSpeed = 400;
-    }
-
-    setTimeout(typewrite, typeSpeed);
-}
-typewrite();
 
 // Animated stat counters
 function animateCounters() {

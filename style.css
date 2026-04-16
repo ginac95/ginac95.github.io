@@ -4,17 +4,19 @@
     --pink-light: #f06595;
     --pink-soft: #fff0f3;
     --pink-pale: #fce4ec;
-    --dark: #1a1a2e;
-    --text: #333;
-    --text-light: #666;
-    --white: #fff;
-    --gray-bg: #fafafa;
-    --border: #e8e8e8;
-    --radius: 8px;
-    --shadow: 0 2px 12px rgba(214, 51, 108, 0.08);
-    --shadow-hover: 0 4px 20px rgba(214, 51, 108, 0.15);
+    --gold: #b08d57;
+    --dark: #111827;
+    --text: #374151;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --gray-bg: #f9fafb;
+    --border: #e5e7eb;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+    --shadow-hover: 0 10px 30px rgba(0,0,0,0.08);
     --transition: 0.3s ease;
-    --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 * {
@@ -55,16 +57,7 @@ a:hover {
     color: var(--pink-light);
 }
 
-/* === Custom Cursor === */
-/* Pink dot cursor site-wide; uses inline SVG so no external files needed */
-body {
-    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><circle cx="6" cy="6" r="5" fill="%23d6336c" opacity="0.85"/></svg>') 6 6, auto;
-}
-
-/* Larger pink dot for clickable / interactive elements */
-a, button, .btn, [role="button"] {
-    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><circle cx="9" cy="9" r="8" fill="%23d6336c" opacity="0.85"/></svg>') 9 9, pointer;
-}
+/* Custom cursor removed — using system defaults for better accessibility */
 
 /* === Skip Link (Accessibility) === */
 .skip-link {
@@ -109,8 +102,9 @@ nav {
 }
 
 .nav-name {
+    font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--dark);
 }
 
@@ -156,10 +150,13 @@ nav {
 
 /* === Hero === */
 #hero {
-    padding: 120px 0 80px;
-    background: linear-gradient(135deg, var(--white) 0%, var(--pink-soft) 30%, var(--pink-pale) 60%, var(--white) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0 60px;
+    background: linear-gradient(160deg, var(--white) 0%, var(--pink-soft) 40%, var(--pink-pale) 70%, var(--white) 100%);
     background-size: 300% 300%;
-    animation: hero-gradient 12s ease infinite;
+    animation: hero-gradient 16s ease infinite;
 }
 
 @keyframes hero-gradient {
@@ -179,10 +176,12 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 2.8rem;
+    font-family: var(--font-display);
+    font-size: 3.4rem;
     font-weight: 800;
     color: var(--dark);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .accent {
@@ -194,6 +193,16 @@ nav {
     color: var(--pink);
     font-weight: 600;
     margin-bottom: 4px;
+}
+
+.hero-tagline {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 6px;
+    opacity: 0.85;
 }
 
 .affiliation {
@@ -289,17 +298,18 @@ nav {
 }
 
 .hero-img {
-    width: 340px;
-    height: 400px;
+    width: 360px;
+    height: 420px;
     border-radius: 50% / 45%;
     border: 3px solid var(--pink);
     object-fit: cover;
     object-position: top;
+    box-shadow: 0 20px 50px rgba(214, 51, 108, 0.12);
 }
 
 /* === Sections === */
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .alt-bg {
@@ -307,7 +317,9 @@ section {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--dark);
     margin-bottom: 8px;
     position: relative;
@@ -317,10 +329,10 @@ h2 {
 h2::after {
     content: '';
     display: block;
-    width: 40px;
-    height: 3px;
-    background: var(--pink);
-    margin-top: 8px;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--pink), var(--gold));
+    margin-top: 10px;
     border-radius: 2px;
 }
 
@@ -745,34 +757,43 @@ footer p {
 
 /* === Featured In Bar === */
 .featured-bar {
-    padding: 32px 0;
-    background: var(--white);
+    padding: 40px 0;
+    background: var(--gray-bg);
+    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
 .featured-label {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--text-light);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .featured-logos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 48px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .featured-logo {
-    font-size: 1.05rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
     font-weight: 700;
-    color: #bbb;
-    letter-spacing: 0.5px;
+    color: #999;
+    letter-spacing: 0.3px;
     transition: color var(--transition);
+    padding: 0 16px;
+    border-right: 1px solid var(--border);
+}
+
+.featured-logo:last-child {
+    border-right: none;
 }
 
 .featured-logo:hover {
@@ -782,9 +803,9 @@ footer p {
 /* === About Blurb === */
 .about-blurb {
     max-width: 800px;
-    margin: 24px 0 48px;
+    margin: 32px 0 56px;
     font-size: 1.05rem;
-    line-height: 1.9;
+    line-height: 1.95;
     color: var(--text);
 }
 
@@ -821,10 +842,11 @@ footer p {
 
 /* === Bible Verses === */
 .hero-verse {
+    font-family: var(--font-display);
     font-style: italic;
     font-size: 0.95rem;
     color: var(--text-light);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     letter-spacing: 0.3px;
 }
 
@@ -841,25 +863,7 @@ footer p {
     margin-bottom: 12px;
 }
 
-/* === Typewriter === */
-.typewriter-line {
-    font-size: 1.05rem;
-    color: var(--pink);
-    font-weight: 500;
-    min-height: 1.6em;
-    margin-bottom: 4px;
-}
-
-.typewriter-cursor {
-    animation: blink 0.8s infinite;
-    color: var(--pink);
-    font-weight: 300;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+/* Typewriter removed — replaced with static tagline */
 
 /* === Currently Section === */
 .currently-section {
@@ -1068,8 +1072,18 @@ footer p {
         text-align: center;
     }
 
+    #hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .featured-logo {
+        border-right: none;
+        padding: 4px 12px;
     }
 
     .hero-stats {
@@ -1085,8 +1099,8 @@ footer p {
     }
 
     .hero-img {
-        width: 220px;
-        height: 260px;
+        width: 240px;
+        height: 280px;
     }
 
     .interest-grid {
@@ -1124,7 +1138,7 @@ footer p {
     }
 
     section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .currently-grid {
@@ -1156,19 +1170,20 @@ footer p {
 /* === Dark Mode === */
 html.dark-mode {
     --dark: #f0f0f0;
-    --text: #e0e0e0;
-    --text-light: #aaa;
-    --white: #1a1a2e;
-    --gray-bg: #16162a;
-    --border: #2a2a45;
-    --pink-soft: #2a1a2e;
-    --pink-pale: #2e1a28;
-    --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 4px 20px rgba(214, 51, 108, 0.25);
+    --text: #d1d5db;
+    --text-light: #9ca3af;
+    --white: #111827;
+    --gray-bg: #0f1523;
+    --border: #1f2937;
+    --pink-soft: #1f1225;
+    --pink-pale: #251520;
+    --gold: #c9a84c;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 html.dark-mode nav {
-    background: rgba(26, 26, 46, 0.95);
+    background: rgba(17, 24, 39, 0.95);
 }
 
 html.dark-mode .nav-name {
@@ -1180,11 +1195,12 @@ html.dark-mode .hero-img {
 }
 
 html.dark-mode .interest-card {
-    background: #16162a;
+    background: #0f1523;
 }
 
 html.dark-mode .featured-logo {
-    color: #555;
+    color: #6b7280;
+    border-right-color: #1f2937;
 }
 
 html.dark-mode .featured-logo:hover {
@@ -1192,15 +1208,15 @@ html.dark-mode .featured-logo:hover {
 }
 
 html.dark-mode footer {
-    background: #1a1a2e;
+    background: #111827;
 }
 
 html.dark-mode .currently-section {
-    background: #2a1a2e;
+    background: #1f1225;
 }
 
 html.dark-mode .badge-peer {
-    background: #2e1a28;
+    background: #251520;
 }
 
 html.dark-mode .badge-book {
@@ -1219,7 +1235,7 @@ html.dark-mode .badge-review {
 }
 
 html.dark-mode .journal-tag {
-    background: #2a1a2e;
+    background: #1f1225;
 }
 
 html.dark-mode .btn-outline {
@@ -1233,7 +1249,7 @@ html.dark-mode .btn-outline:hover {
 }
 
 html.dark-mode .dark-mode-toggle {
-    border-color: #2a2a45;
+    border-color: #1f2937;
     color: #ffd93d;
 }
 

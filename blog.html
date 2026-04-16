@@ -11,6 +11,9 @@
     <meta property="og:url" content="https://ginac95.github.io/blog.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
@@ -27,7 +30,8 @@
         }
 
         .blog-header h1 {
-            font-size: 2.4rem;
+            font-family: var(--font-display);
+            font-size: 2.6rem;
             font-weight: 800;
             color: var(--dark);
         }
@@ -134,11 +138,11 @@
         }
 
         html.dark-mode .blog-card {
-            background: #16162a;
+            background: #0f1523;
         }
 
         html.dark-mode .blog-takeaway {
-            background: #2a1a2e;
+            background: #1f1225;
         }
 
         /* Nav for subpages */
@@ -160,7 +164,7 @@
         }
 
         html.dark-mode .subnav {
-            background: rgba(26, 26, 46, 0.95);
+            background: rgba(17, 24, 39, 0.95);
         }
 
         .subnav-left {
@@ -171,8 +175,9 @@
 
         .subnav-left a {
             color: var(--dark);
+            font-family: var(--font-display);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .subnav-left a:hover {
